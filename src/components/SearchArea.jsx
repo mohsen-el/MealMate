@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { MealContext } from "../App";
 
 export default function SearchArea() {
-  // import context
+  // Import context
   const { fetchData, setSearchResult } = useContext(MealContext);
   // App keys
   const appID = import.meta.env.VITE_APP_ID;
@@ -14,19 +14,19 @@ export default function SearchArea() {
   });
 
   const handleClick = () => {
-    fetchData(`api/recipes/v2?type=public&q=${searchValue.mealSearch}&app_id=${appID}&app_key=${appKey}&calories=${searchValue.calorieSearch}&imageSize=LARGE`);
-    setSearchValue({ mealSearch: "", calorieSearch: "" });
-    setSearchResult(searchValue);
+    const query = `api/recipes/v2?type=public&q=${searchValue.mealSearch}&app_id=${appID}&app_key=${appKey}&calories=${searchValue.calorieSearch}&imageSize=LARGE`;
+    fetchData(query);
+    setSearchResult(searchValue); // Update the search result context
+    setSearchValue({ mealSearch: "", calorieSearch: "" }); // Reset the input fields
   };
 
-  function handleChange(event) {
+  const handleChange = (event) => {
     const { name, value } = event.target;
-
     setSearchValue((prevValue) => ({
       ...prevValue,
       [name]: value,
     }));
-  }
+  };
 
   return (
     <div className="bg-gray-900 flex items-center py-10">

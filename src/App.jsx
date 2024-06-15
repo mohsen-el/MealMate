@@ -14,7 +14,7 @@ function App() {
   // const appKey = import.meta.env.VITE_APP_KEY;
   
   const [searchResult, setSearchResult] = useState('');
-  const {response, isLoading, error, fetchData} = useAxios(`api/recipes/v2?type=public&q=Chicken&app_id=3fa98817&app_key=%209249849c801838e53709b048765787de&calories=300-500`
+  const {response, isLoading, error, fetchData} = useAxios(`api/recipes/v2?type=public&q=Chicken&app_id=3fa98817&app_key=%209249849c801838e53709b048765787de&calories=300-500&imageSize=SMALL`
   )
 
   const value = {
