@@ -3,16 +3,16 @@ import axios from "axios";
 
 export default function useAxios(param) {
   const [response, setResponse] = useState([]);
-  const [isLoading, setIsLoading] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
 
-  axios.defaults.baseURL = `https://api.edamam.com/doc/open-api/recipe-search-v2.json`;
+  axios.defaults.baseURL = `api.edamam.com`;
   const fetchData = async (url) => {
     try {
       setIsLoading(true);
-      const res = await axios(url-'/');
-      setResponse(res.data.results);
+      const res = await axios(url);
       console.log(res.data)
+      setResponse(res.data.hits);
     } catch (err) {
       setError(err);
     } finally {
