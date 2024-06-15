@@ -1,33 +1,42 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-export default function useAxios(param) {
+export default function useAxios(url) {
   const [response, setResponse] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
 
-  axios.defaults.baseURL = `api.edamam.com`;
+  // Set the base URL for the API
+  axios.defaults.baseURL = `https://api.edamam.com`;
+
   const fetchData = async (url) => {
     try {
       setIsLoading(true);
-      const res = await axios(url);
-      console.log(res.data)
-      setResponse(res.data.hits);
+      const res = await axios.get(url, {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+      console.log('Axios response:', res.data.hits); 
+      setResponse(res.data.hits); // Adjust based on actual response structure
     } catch (err) {
-      setError(err);
+      console.error('Axios error:', err);
+      setError(err.message || "An error occurred");
     } finally {
       setIsLoading(false);
     }
   };
 
   useEffect(() => {
-    fetchData(param);
-  }, [param]);
+    if (url) {
+      fetchData(url);
+    }
+  }, [url]);
+
   return {
     response,
     isLoading,
     error,
-    fetchData: (url) => fetchData(url),
+    fetchData,
   };
 }
-
