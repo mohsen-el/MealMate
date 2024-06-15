@@ -16,6 +16,7 @@ export default function MealCard() {
       ingredients={info.recipe.ingredientLines}
       calories={Math.round(info.recipe.calories/info.recipe.yield)}
       image={info.recipe.image}
+      recipelink={info.recipe.url}
     />
   );
 
@@ -23,7 +24,7 @@ export default function MealCard() {
   if (error) return <p>Error: {error}</p>;
 
   return (
-    <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4 my-10 max-w-7xl mx-auto px-4">
+    <div className="grid md:grid-cols-2 sm:grid-cols-1 sm:object-center lg:grid-cols-3 xl:grid-cols-3 gap-4 my-10 max-w-7xl mx-auto px-4">
       {mealInfo && mealInfo.length > 0 ? mealInfo.map((info, index) => createCard(info, index)) : <p>No meals found</p>}
     </div>
   );

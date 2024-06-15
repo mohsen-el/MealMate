@@ -37,14 +37,14 @@ export default function SearchArea() {
             onChange={handleChange}
             value={searchValue.mealSearch}
             placeholder="Meal type"
-            className="rounded-lg focus:border-red-100 focus:ring-1 focus:outline-none focus:ring-red-100"
+            className="border-2 rounded-lg focus:border-amber-200 focus:ring-1 focus:outline-none focus:ring-amber-100"
           />
           <input
             name="calorieSearch"
             onChange={handleChange}
             value={searchValue.calorieSearch}
             placeholder="Calories"
-            className="rounded-lg"
+            className="border-2 rounded-lg focus:border-amber-200 focus:ring-1 focus:outline-none focus:ring-amber-100"
           />
           <button
             className="bg-red-300 hover:bg-red-400 rounded-lg px-1 py-1"
