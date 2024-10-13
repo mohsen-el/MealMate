@@ -34,6 +34,7 @@ npm run dev
 * [npm](https://www.npmjs.com/) - Dependency Management
 * [Axios](https://axios-http.com/) - API handling
 * [Tailwind](https://tailwindcss.com/) - Styling
+* [edamam](https://www.edamam.com/) - API provider
 
 
 ![Getting started](https://github.com/mohsen-el/MealMate/assets/101658098/cdfd6a1c-f814-42c3-bb69-84c387341386)
