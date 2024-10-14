@@ -3,7 +3,7 @@ export default function Card(props) {
   return (
     <div className="max-w-sm rounded overflow-hidden shadow-lg flex flex-col sm:basis-1 hover:shadow-2xl">
       <h2 className="text-center font-semibold">{props.mealName}</h2>
-      <img className="w-full" src={props.image} alt={props.mealName} />
+      <img className="h-[400px] w-[400px]" src={props.image} alt={props.mealName} />
       <div className="px-6 py-4 flex-grow">
         <div className="font-bold text-xl mb-2">Calories: {props.calories}</div>
         <span className="mr-2 mb-2 bg-gray-200 rounded-full px-2 py-1">Protein: {props.protein}</span>
