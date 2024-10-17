@@ -42,8 +42,8 @@ export default function SearchArea() {
             name="mealSearch"
             onChange={handleChange}
             value={searchValue.mealSearch}
-            placeholder="Meal type"
-            className="border-2 rounded-lg focus:border-amber-200 focus:ring-1 focus:outline-none focus:ring-amber-100"
+            placeholder="Recipe search"
+            className="border-2 rounded-lg focus:border-amber-200 focus:ring-1 focus:outline-none focus:caret-amber-100"
           />
           {/* calories input area */}
           <div className="flex items-center gap-1">
@@ -52,7 +52,7 @@ export default function SearchArea() {
             onChange={handleChange}
             value={searchValue.calorieSearch}
             placeholder="Calories"
-            className="border-2 rounded-lg focus:border-amber-200 focus:ring-1 focus:outline-none focus:ring-amber-100 h-8"
+            className="border-2 rounded-lg focus:border-amber-200 focus:ring-1 focus:outline-none focus:caret-amber-100 h-8"
           />
           <i className="fa-regular fa-circle-question fa-xl text-blue-400 cursor-pointer" onMouseOver={handleHover} onMouseOut={() => setShowInfo(false)}>
           </i>
