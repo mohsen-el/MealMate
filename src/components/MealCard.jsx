@@ -17,6 +17,7 @@ export default function MealCard() {
       calories={Math.round(info.recipe.calories/info.recipe.yield)}
       image={info.recipe.image}
       recipelink={info.recipe.url}
+      servings={info.recipe.yield}
     />
   );
 
