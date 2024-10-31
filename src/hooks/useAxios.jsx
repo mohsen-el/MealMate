@@ -18,7 +18,7 @@ export default function useAxios(url) {
         },
       });
       console.log('Axios response:', res.data.hits); 
-      setResponse(res.data.hits); // Adjust based on actual response structure
+      setResponse(res.data.hits); 
     } catch (err) {
       console.error('Axios error:', err);
       setError(err.message || "An error occurred");

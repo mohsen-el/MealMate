@@ -51,13 +51,13 @@ export default function SearchArea() {
   return (
     <div className="bg-gray-900 flex items-center py-4">
       <div className="max-w-md mx-auto w-full">
-        <div className="flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0 items-center">
+        <div className="flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0 items-center justify-center">
           <input
             name="mealSearch"
             onChange={handleChange}
             value={searchValue.mealSearch}
             placeholder="Recipe search"
-            className="border-2 rounded-lg focus:border-amber-200 focus:ring-1 focus:outline-none focus:caret-amber-100 w-full sm:w-auto"
+            className="border-2 rounded-lg focus:border-amber-200 focus:ring-1 focus:outline-none focus:caret-amber-100 h-8 w-60"
           />
           <div className="flex flex-row items-center gap-2">
             <input
@@ -65,7 +65,7 @@ export default function SearchArea() {
               onChange={handleChange}
               value={searchValue.calorieSearch}
               placeholder="Calories"
-              className="border-2 rounded-lg focus:border-amber-200 focus:ring-1 focus:outline-none focus:caret-amber-100 h-8 w-full sm:w-auto"
+              className="border-2 rounded-lg focus:border-amber-200 focus:ring-1 focus:outline-none focus:caret-amber-100 h-8 w-60 ml-8"
             />
             <div
               onMouseEnter={handleHover}
@@ -83,7 +83,7 @@ export default function SearchArea() {
           <select
             value={selectedDiet}
             onChange={handleDietChange}
-            className="border-2 rounded-lg focus:border-amber-200 focus:ring-1 focus:outline-none w-full sm:w-auto"
+            className="border-2 rounded-lg focus:border-amber-200 focus:ring-1 focus:outline-none w-60 h-8"
           >
             <option value="">Select Diet</option>
             <option value="balanced">Balanced</option>
@@ -95,7 +95,7 @@ export default function SearchArea() {
           </select>
           <button
             disabled={!searchValue.calorieSearch || !searchValue.mealSearch}
-            className="bg-red-300 hover:bg-red-400 rounded-lg px-1 py-1 disabled:bg-gray-500"
+            className="bg-red-300 hover:bg-red-400 rounded-lg px-3 py-2 disabled:bg-gray-500"
             onClick={handleClick}
           >
             Search
